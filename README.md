@@ -5,6 +5,6 @@
 ## Dependency
 
 - React 17.0.2
--firebase
+- firebase
 
 - Vercel
