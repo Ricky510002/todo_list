@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import {InputTodo} from "./components/InputTodo";
+import { InputTodo } from "./components/InputTodo";
 import { TodoList } from "./components/TodoList";
+import { FinishTodo } from "./components/FinishTodo";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
@@ -45,30 +46,20 @@ export const App = () => {
 
   return (
     <>
-      <InputTodo todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd}/>
-      <TodoList  todos={todos}  onClickComplete={onClickComplete} onClickDelete={onClickDelete}/>
-
-     
-
-      <div className="finishArea">
-        <h2>終わったこと</h2>
-        <ul id="finishList">
-          {finishTodos.map((finishTodo, index) => {
-            return (
-              <li key={index} className="listLow">
-                <p>{finishTodo}</p>
-                <button
-                  onClick={() => {
-                    onClickBack(index);
-                  }}
-                >
-                  戻す
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <InputTodo
+        todoText={todoText}
+        onChange={onChangeTodoText}
+        onClick={onClickAdd}
+      />
+      <TodoList
+        todos={todos}
+        onClickComplete={onClickComplete}
+        onClickDelete={onClickDelete}
+      />
+      <FinishTodo
+        todos={finishTodos}
+        onClickBack={onClickBack}
+      />
     </>
   );
 };
