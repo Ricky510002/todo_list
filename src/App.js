@@ -56,10 +56,7 @@ export const App = () => {
         onClickComplete={onClickComplete}
         onClickDelete={onClickDelete}
       />
-      <FinishTodo
-        todos={finishTodos}
-        onClickBack={onClickBack}
-      />
+      <FinishTodo todos={finishTodos} onClickBack={onClickBack} />
     </>
   );
 };
