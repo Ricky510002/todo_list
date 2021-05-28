@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import {InputTodo} from "./components/InputTodo";
+import { TodoList } from "./components/TodoList";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
@@ -45,34 +46,9 @@ export const App = () => {
   return (
     <>
       <InputTodo todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd}/>
+      <TodoList  todos={todos}  onClickComplete={onClickComplete} onClickDelete={onClickDelete}/>
 
-      <div className="listArea">
-        <h2>TODOリスト</h2>
-        <ul id="todoList">
-          {todos.map((todo, index) => {
-            return (
-              <li key={index} className="listLow">
-                <p>{todo}</p>
-                {/* 引数を渡したい時はアロー関数にする */}
-                <button
-                  onClick={() => {
-                    onClickComplete(index);
-                  }}
-                >
-                  完了
-                </button>
-                <button
-                  onClick={() => {
-                    onClickDelete(index);
-                  }}
-                >
-                  削除
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+     
 
       <div className="finishArea">
         <h2>終わったこと</h2>
