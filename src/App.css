@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+/* リセットcss */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #75b9be;
+}
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #0044cc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputArea {
+  background-color: #dceab2;
+  width: 500px;
+  height: 80px;
+  margin: 50px 30vw;
+  padding: 10px;
+  border-radius: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input {
+  width: 300px;
+  height: 40px;
+  margin: 10px;
+  padding: 6px 16px;
+  outline: 0;
+  border-radius: 5px;
+  border: none;
+}
+button {
+  width: 70px;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 20px;
+  border: none;
+  background-color: #c7d66d;
+}
+button:hover {
+  background-color: #75b9be;
   color: white;
+  cursor: pointer;
+  display: inline-block;
 }
-
-.App-link {
-  color: #61dafb;
+.listArea {
+  background-color: #dceab2;
+  width: 500px;
+  height: 100%;
+  margin: 0 30vw;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 300px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.finishArea {
+  background-color: #dceab2;
+  width: 500px;
+  height: 100%;
+  margin: 50px 30vw;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 300px;
+}
+h2 {
+  text-align: center;
+  margin-top: 3px;
+}
+ul {
+  list-style-type: disc;
+}
+.listLow {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+}
+p {
+  margin-right: 40px;
+}
+/* タブレットサイズ横長 */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .inputArea {
+    background-color: #dceab2;
+    width: 500px;
+    height: 80px;
+    margin: 50px 20vw;
+    padding: 10px;
+    border-radius: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .listArea {
+    background-color: #dceab2;
+    width: 500px;
+    height: 100%;
+    margin: 0 20vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  .finishArea {
+    background-color: #dceab2;
+    width: 500px;
+    height: 100%;
+    margin: 50px 20vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+}
+/* タブレットサイズ縦長 */
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .inputArea {
+    background-color: #dceab2;
+    width: 400px;
+    height: 80px;
+    margin: 50px 20vw;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .listArea {
+    background-color: #dceab2;
+    width: 400px;
+    height: 100%;
+    margin: 0 20vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  .finishArea {
+    background-color: #dceab2;
+    width: 400px;
+    height: 100%;
+    margin: 50px 20vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  input {
+    width: 230px;
+    height: 40px;
+    margin: 10px;
+    padding: 6px 16px;
+    outline: 0;
+    border-radius: 5px;
+    border: none;
+  }
+}
+/* スマホサイズ */
+@media(max-width: 480px) {
+  .inputArea {
+    background-color: #dceab2;
+    width: 85vw;
+    height: 80px;
+    margin: 50px 7vw;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .listArea {
+    background-color: #dceab2;
+    width: 85vw;
+    height: 100%;
+    margin: 0 7vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  .finishArea {
+    background-color: #dceab2;
+    width: 85vw;
+    height: 100%;
+    margin: 50px 7vw;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 300px;
+  }
+  input {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    padding: 6px 16px;
+    outline: 0;
+    border-radius: 5px;
+    border: none;
   }
 }
