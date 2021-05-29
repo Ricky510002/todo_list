@@ -5,7 +5,7 @@ export const TodoList = (props) => {
 
   return (
     <div className="listArea">
-      <h2>TODOリスト</h2>
+      <h2>Todo List</h2>
       <ul id="todoList">
         {todos.map((todo, index) => {
           return (

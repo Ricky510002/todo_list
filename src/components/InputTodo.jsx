@@ -7,12 +7,12 @@ export const InputTodo = (props) => {
     <div className="inputArea">
       <input
         id="addText"
-        placeholder="TODOを入力"
+        placeholder="Add New Task"
         type="text"
         value={todoText}
         onChange={onChange}
       />
-      <button onClick={onClick}>追加</button>
+      <button onClick={onClick}>Add</button>
     </div>
   );
 };

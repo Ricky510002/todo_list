@@ -4,7 +4,7 @@ export const FinishTodo = (props) => {
   const{todos,onClickBack} = props;
   return (
     <div className="finishArea">
-      <h2>終わったこと</h2>
+      <h2>Done</h2>
       <ul id="finishList">
         {todos.map((finishTodo, index) => {
           return (
