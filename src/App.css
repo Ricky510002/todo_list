@@ -14,23 +14,6 @@ a {
   color: #0044cc;
 }
 
-.inputArea {
-  background-color: #dceab2;
-  width: 500px;
-  height: 80px;
-  margin: 50px 30vw;
-  padding: 10px;
-  border-radius: 10px;
-}
-input {
-  width: 300px;
-  height: 40px;
-  margin: 10px;
-  padding: 6px 16px;
-  outline: 0;
-  border-radius: 5px;
-  border: none;
-}
 button {
   width: 70px;
   height: 40px;
@@ -45,141 +28,19 @@ button:hover {
   cursor: pointer;
   display: inline-block;
 }
-.listArea {
-  background-color: #dceab2;
-  width: 500px;
-  height: 100%;
-  margin: 0 30vw;
-  padding: 10px;
-  border-radius: 10px;
-  min-height: 300px;
+.sign_in{
+  display: block;
+  width: 250px;
+  height: 60px;
+  margin: 330px auto;  
+  font-size: 20px;
+  font-family: 'Comic Sans MS';
 }
-.finishArea {
-  background-color: #dceab2;
-  width: 500px;
-  height: 100%;
-  margin: 50px 30vw;
-  padding: 10px;
-  border-radius: 10px;
-  min-height: 300px;
-}
-h2 {
-  text-align: center;
-  margin-top: 3px;
-}
-ul {
-  list-style-type: disc;
-}
-.listLow {
-  display: flex;
-  align-items: center;
-  padding-bottom: 4px;
-}
-p {
-  margin-right: 40px;
-}
-/* タブレットサイズ横長 */
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .inputArea {
-    background-color: #dceab2;
-    width: 500px;
-    height: 80px;
-    margin: 50px 20vw;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .listArea {
-    background-color: #dceab2;
-    width: 500px;
-    height: 100%;
-    margin: 0 20vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-  .finishArea {
-    background-color: #dceab2;
-    width: 500px;
-    height: 100%;
-    margin: 50px 20vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-}
-/* タブレットサイズ縦長 */
-@media all and (min-width: 480px) and (max-width: 768px) {
-  .inputArea {
-    background-color: #dceab2;
-    width: 400px;
-    height: 80px;
-    margin: 50px 20vw;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .listArea {
-    background-color: #dceab2;
-    width: 400px;
-    height: 100%;
-    margin: 0 20vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-  .finishArea {
-    background-color: #dceab2;
-    width: 400px;
-    height: 100%;
-    margin: 50px 20vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-  input {
-    width: 230px;
-    height: 40px;
-    margin: 10px;
-    padding: 6px 16px;
-    outline: 0;
-    border-radius: 5px;
-    border: none;
-  }
-}
-/* スマホサイズ */
-@media(max-width: 480px) {
-  .inputArea {
-    background-color: #dceab2;
-    width: 85vw;
-    height: 80px;
-    margin: 50px 7vw;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  .listArea {
-    background-color: #dceab2;
-    width: 85vw;
-    height: 100%;
-    margin: 0 7vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-  .finishArea {
-    background-color: #dceab2;
-    width: 85vw;
-    height: 100%;
-    margin: 50px 7vw;
-    padding: 10px;
-    border-radius: 10px;
-    min-height: 300px;
-  }
-  input {
-    width: 200px;
-    height: 40px;
-    margin: 10px;
-    padding: 6px 16px;
-    outline: 0;
-    border-radius: 5px;
-    border: none;
-  }
+.sign_in:hover{
+  display: block;
+  margin: 330px auto;  
+  background-color: #0df79d;
+  color: white;
+  cursor: pointer;
+  font-family: 'Comic Sans MS';
 }
