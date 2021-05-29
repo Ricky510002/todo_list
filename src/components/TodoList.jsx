@@ -1,4 +1,6 @@
 import React from "react";
+import DeleteIcon from '@material-ui/icons/Delete';
+import DoneIcon from '@material-ui/icons/Done';
 
 export const TodoList = (props) => {
   const { todos, onClickComplete, onClickDelete } = props;
@@ -17,14 +19,14 @@ export const TodoList = (props) => {
                   onClickComplete(index);
                 }}
               >
-                完了
+               <DoneIcon/>
               </button>
               <button
                 onClick={() => {
                   onClickDelete(index);
                 }}
               >
-                削除
+              <DeleteIcon/>
               </button>
             </li>
           );

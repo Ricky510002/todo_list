@@ -1,4 +1,5 @@
 import React from "react";
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 export const FinishTodo = (props) => {
   const{todos,onClickBack} = props;
@@ -15,7 +16,7 @@ export const FinishTodo = (props) => {
                   onClickBack(index);
                 }}
               >
-                戻す
+                <ArrowUpwardIcon/>
               </button>
             </li>
           );
