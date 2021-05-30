@@ -3,11 +3,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import DoneIcon from '@material-ui/icons/Done';
 
 export const TodoList = (props) => {
-  const { todos, onClickComplete, onClickDelete } = props;
+  const { todos, onClickComplete, onClickDelete, name } = props;
 
   return (
     <div className="listArea">
-      <h2>Todo List</h2>
+      <h2>{name}'s Todo List</h2> 
       <ul id="todoList">
         {todos.map((todo, index) => {
           return (
