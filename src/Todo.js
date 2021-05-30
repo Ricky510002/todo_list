@@ -15,7 +15,9 @@ export const Todo = () => {
 
   const onChangeTodoText = (e) => setTodoText(e.target.value);
 
-  const db = firebase.firestore(); // 追記
+  const db = firebase.firestore(); 
+  // 現在ログインしている人の情報を取得
+  const user = firebase.auth().currentUser;
 
   // Loadingを判定する変数
   const [isLoading, setIsLoading] = useState(true);
@@ -24,15 +26,38 @@ export const Todo = () => {
   // 完了済みのTodoが変化したかを監視する変数
   const [isChangedFinished, setIsChangedFinished] = useState(false);
 
-
   useEffect(() => {
     (async () => {
-      const resTodo = await db.collection("todoList").doc("todo").get();
+      const resTodo = await db.collection(user.uid).doc("todo").get();
       // stateに入れる
-      setTodos(resTodo.data().tasks);
-      const resFinishedTodo = await db.collection("todoList").doc("finishTodo").get();
+      
+      if(resTodo.data() === undefined){
+        await db.collection(user.uid).doc('finishTodo').set({
+          tasks: finishTodos,
+        });
+  
+        await db.collection(user.uid).doc('todo').set({
+          tasks: todos,
+        });
+      } else{
+        setTodos(resTodo.data().tasks);
+      }
+     
+      const resFinishedTodo = await db.collection(user.uid).doc("finishTodo").get();
+
       // stateに入れる
-      setFinishTodos(resFinishedTodo.data().tasks);
+      if(resTodo.data() === undefined){
+        await db.collection(user.uid).doc('finishTodo').set({
+          tasks: finishTodos,
+        });
+  
+        await db.collection(user.uid).doc('todo').set({
+          tasks: todos,
+        });
+      } else{
+        setFinishTodos(resFinishedTodo.data().tasks);
+      }
+     
       // Loading終了
       setIsLoading(false);
     })()
@@ -41,9 +66,19 @@ export const Todo = () => {
   useEffect(() => {
     if (isChangedTodo) {
       (async () => {
+
         // 通信をするのでLoadingをtrue
         setIsLoading(true)
-        const docRef = await db.collection('todoList').doc('todo');
+        
+        await db.collection(user.uid).doc('finishTodo').set({
+          tasks: finishTodos,
+        });
+
+        await db.collection(user.uid).doc('todo').set({
+          tasks: todos,
+        });
+
+        const docRef = await db.collection(user.uid).doc('todo');
         docRef.update({ tasks: todos })
         // Loading終了
         setIsLoading(false)
@@ -56,7 +91,7 @@ export const Todo = () => {
       (async () => {
         // 通信をするのでLoadingをtrue
         setIsLoading(true)
-        const docRef = await db.collection('todoList').doc('finishTodo');
+        const docRef = await db.collection(user.uid).doc('finishTodo');
         docRef.update({ tasks: finishTodos })
         // Loading終了
         setIsLoading(false)
@@ -70,7 +105,7 @@ export const Todo = () => {
 
   const onClickAdd = async() => {
     if (todoText === "") return;
-    // 追記 Todoが変化したのでtrue
+    //Todoが変化したのでtrue
     setIsChangedTodo(true);
     // 初めからあるtodoと新しく入力されたtodoの配列同士の結合（スプレッド構文）
     const newTodos = [...todos, todoText];
@@ -110,6 +145,7 @@ export const Todo = () => {
     setTodos(newTodos);
     setFinishTodos(newFinshTodos);
   };
+  
 
   return (
     <>
@@ -122,6 +158,7 @@ export const Todo = () => {
         todos={todos}
         onClickComplete={onClickComplete}
         onClickDelete={onClickDelete}
+        name={user.displayName}
       />
       <FinishTodo todos={finishTodos} onClickBack={onClickBack} />
 
