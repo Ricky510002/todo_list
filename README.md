@@ -9,5 +9,5 @@ Googleアカウントでサインインした後で簡単に使えます。
 
 ## Dependency
 - React 17.0.2
-- firebase 8.6.3
+- firebase 8.6.3(Auth, Firestore)
 
