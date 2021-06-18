@@ -1,6 +1,6 @@
 ## シンプルなTODOリスト
 シンプルなTodoリストです。
-Googleアカウントでサインインした後で簡単に使えます。
+Googleアカウントでサインインした後ですぐに使えます。
 - [Todo Listを使ってみる](https://todolist-ca051.web.app) 
 
 ## DEMO
